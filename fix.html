@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Volume Bangun Ruang</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="fix.css">
+</head>
+<body>
+<div class = "container" >
+    <p> <img src="img/all.jpeg" alt="" id="gambarHeader" > </p>
+<form action="javascript:calculateVolume()" onchange="javascript:tampilkan()">
+    <!-- pilihan bangun ruang -->
+    <label for="pilihBR">Pilih Bangun Ruang</label>
+    <select id="pilihBR">
+        <option value="silahkanPilih" selected>Silahkan Pilih</option>
+        <option value="kubus" >Kubus</option>
+        <option value="balok">Balok</option>
+        <option value="kerucut">Kerucut</option>
+        <option value="tabung">Tabung</option>
+        <option value="limasS3" >Limas Segitiga</option>
+        <option value="limasS4" >Limas Segiempat</option>
+        <option value="prismaS3" >Prisma Tegak Segitiga</option>
+        <option value="bola" >Bola</option>
+    </select>
+    <div class="dipilih" id="inputKubus"hidden > 
+        <img src="img/kubus.jpeg" alt=""> <br>
+        <label for="sisiKubus">Sisi Kubus</label>
+        <input id="sisiKubus" type="number" min="0" step="any"> <br>
+        <h2><em>Volume = Sisi x Sisi x Sisi</em></h2>
+        <input type="submit" value="Hitung Volume" >
+    </div>
+    <div class="dipilih" id="inputBalok" hidden> 
+        <img src="img/balok.jpeg" alt=""><br>
+        <label for="panjangBalok">Panjang Balok</label>
+        <input id="panjangBalok" type="number" min="0" step="any"><br>
+        <label for="lebarBalok">Lebar Balok</label>
+        <input id="lebarBalok" type="number" min="0" step="any"><br>
+        <label for="tinggiBalok">Tinggi Balok</label>
+        <input id="tinggiBalok" type="number" min="0" step="any"><br>
+        <h2><em>Volume = Panjang x Lebar x Tinggi</em></h2>
+        <input type="submit" value="Hitung Volume" >
+    </div>
+    <div class="dipilih" id="inputKerucut" hidden> 
+        <img src="img/kerucut.jpeg" alt=""><br>
+        <label for="jari2AlasKerucut">Jari-Jari Alas Kerucut</label>
+        <input id="jari2AlasKerucut" type="number" min="0" step="any"><br>
+        <label for="tinggiKerucut">Tinggi Kerucut</label>
+        <input id="tinggiKerucut" type="number" min="0" step="any"><br>
+        <h2><em>Volume = <sup>1</sup>&frasl;<sub>3</sub> * &Pi;r<sup>2</sup> x Tinggi</em></h2>
+        <input type="submit" value="Hitung Volume"  >
+    </div>
+    <div class="dipilih" id="inputTabung" hidden> 
+        <img src="img/tabung.jpeg" alt=""><br>
+        <label for="jari2AlasTabung">Jari-Jari Alas Tabung</label>
+        <input id="jari2AlasTabung" type="number" min="0" step="any"><br>
+        <label for="tinggiTabung">Tinggi tabung</label>
+        <input id="tinggiTabung" type="number" min="0" step="any"><br>
+        <h2><em>Volume = &Pi;r<sup>2</sup> x Tinggi</em></h2>
+        <input type="submit" value="Hitung Volume" >
+    </div>
+    <div class="dipilih" id="inputLimasS3" hidden> 
+        <img src="img/limasS3.jpeg" alt=""><br>
+        <label for="panjangAlasLimasS3">Panjang Alas Limas</label>
+        <input id="panjangAlasLimasS3" type="number" min="0" step="any"><br>
+        <label for="tinggiAlasLimasS3">Tinggi Alas Limas</label>
+        <input id="tinggiAlasLimasS3" type="number" min="0" step="any"><br>
+        <label for="tinggiLimasS3">Tinggi Limas</label>
+        <input id="tinggiLimasS3" type="number" min="0" step="any"><br>
+        <h2><em>Volume = <sup>1</sup>&frasl;<sub>3</sub> x Luas Alas x Tinggi</em></h2>
+        <input type="submit" value="Hitung Volume" >
+    </div>
+    <div class="dipilih" id="inputLimasS4" hidden> 
+        <img src="img/limasS4.jpeg" alt=""><br>
+        <label for="panjangAlasLimasS4">Panjang Alas Limas</label>
+        <input id="panjangAlasLimasS4" type="number" min="0" step="any"><br>
+        <label for="lebarAlasLimasS4">Lebar Alas Limas</label>
+        <input id="lebarAlasLimasS4" type="number" min="0" step="any"><br>
+        <label for="tinggiLimasS4">Tinggi Limas</label>
+        <input id="tinggiLimasS4" type="number" min="0" step="any"><br>
+        <h2><em>Volume = <sup>1</sup>&frasl;<sub>3</sub> x Luas Alas x Tinggi</em></h2>
+        <input type="submit" value="Hitung Volume" >
+    </div>
+    <div class="dipilih" id="inputprismaS3" hidden> 
+        <img src="img/prismaS3.jpeg" alt=""><br>
+        <label for="panjangAlasPrismaS3">Panjang Alas Prisma</label>
+        <input id="panjangAlasPrismaS3" type="number" min="0" step="any"><br>
+        <label for="tinggiAlasPrismaS3">Tinggi Alas Prisma</label>
+        <input id="tinggiAlasPrismaS3" type="number" min="0" step="any"><br>
+        <label for="tinggiPrismaS3">Tinggi Limas</label>
+        <input id="tinggiPrismaS3" type="number" min="0" step="any"><br>
+        <h2><em>Volume = (<sup>1</sup>&frasl;<sub>2</sub> x Panjang Alas x Tinggi Alas) x Tinggi</em></h2>
+        <input type="submit" value="Hitung Volume" >
+    </div>
+    <div class="dipilih" id="inputBola"hidden > 
+        <img src="img/bola.jpeg" alt=""><br>
+        <label for="jari2Bola">Jari-jari Bola</label>
+        <input id="jari2Bola" type="number" min="0" step="any"><br>
+        <h2><em>Volume = <sup>4</sup>&frasl;<sub>3 </sub> &Pi;r<sup>3</sup></em></h2>
+        <input type="submit" value="Hitung Volume"  >
+    </div>
+    <!-- tombol hitung -->
+    
+    <!-- hasil -->
+    <p id="output"></p>
+    <button> <a href="fix.html"> reset </a> </button>
+</form>
+</div>
+
+<script src="fix.js"></script>
+</body>
+</html>
